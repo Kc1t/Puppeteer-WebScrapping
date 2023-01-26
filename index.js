@@ -8,14 +8,14 @@ const IMDB_URL = `https://www.imdb.com/title/${MOVIE_ID}/?ref_=fn_al_tt_1`;
 (async () =>{
     
     const browser = await puppeteer.launch({
-        // headless: false,
-        // slowMo: 1000 //tempo em para abrir 1s
+        headless: false,
+        slowMo: 0 //tempo em para abrir 1s = 1000
     }); //inicia o navegador
     const page = await browser.newPage() //abre nova pag
 
     await page.goto(IMDB_URL, {waitUntil: 'networkidle2'})
 
-    await page.screensho ( {path: './print.jpeg'} ) //pega uma print
+    await page.screenshot ( {path: './print.jpeg', fullPage: yes} ) //pega uma print
  
     await browser.close()
 
