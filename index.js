@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-const MOVIE_ID = '/tt5807606'
+// const MOVIE_ID = '/tt5807606'
 
 // const IMDB_URL = `https://www.imdb.com/title/${MOVIE_ID}/?ref_=fn_al_tt_1`;
 const IMDB_URL = `https://www.imdb.com/title/tt5807606/?ref_=fn_al_tt_1`;
@@ -23,12 +23,14 @@ const IMDB_URL = `https://www.imdb.com/title/tt5807606/?ref_=fn_al_tt_1`;
     let data = await page.evaluate(()=>{
 
         let titulo = document.querySelector('.sc-b73cd867-0.cEmnhL').innerHTML; //pega a classe selecionada e retorna o conteudo dela
-        let nota = document.querySelector('.sc-7ab21ed2-1.eUYAaq').innerHTML 
+        let nota = document.querySelector('.sc-7ab21ed2-1.eUYAaq').innerHTML;
+        let ano = document.querySelector('.sc-8c396aa2-2.jwaBvf').innerHTML;
 
 
         return{
             titulo,
-            nota
+            nota,
+            ano
         }
 
     })
