@@ -5,32 +5,35 @@ const MOVIE_ID = 'tt1877830'
 const IMDB_URL = `https://www.imdb.com/title/${MOVIE_ID}/?ref_=fn_al_tt_1`;
 
 
-// (async () =>{
+(async () =>{
     
-//     const browser = await puppeteer.launch(); //inicia o navegador
-//     const page = await browser.newPage() //abre nova pag
+    const browser = await puppeteer.launch({
+        // headless: false,
+        // slowMo: 1000 //tempo em para abrir 1s
+    }); //inicia o navegador
+    const page = await browser.newPage() //abre nova pag
 
-//     await page.goto(IMDB_URL, {waitUntil: 'networkidle2'})
+    await page.goto(IMDB_URL, {waitUntil: 'networkidle2'})
 
-//     await page.screenshot({path: './print.jpeg', fullPage: true}) //pega uma print
+    await page.screensho ( {path: './print.jpeg'} ) //pega uma print
+ 
+    await browser.close()
 
-//     await browser.close()
-
-// })()
+})()
 
 
 // Tira Print da Página e abre  pag
 
-(async ()=>{
-    const browser = await puppeteer.launch({ //abre o navegador
-        headless: false,
-        slowMo: 1000 //tempo de espera para abrir
-})
-    const page = await browser.newPage()
-    await page.goto('https://www.youtube.com/watch?v=ZrkmqjmKEPg')
-    await page.screenshot({path: 'batman.jpeg'})
-    await browser.close()
-})()
+// (async ()=>{
+//     const browser = await puppeteer.launch({ //abre o navegador
+//         headless: false,
+//         slowMo: 1000 //tempo de espera para abrir
+// })
+//     const page = await browser.newPage()
+//     await page.goto('https://www.youtube.com/watch?v=ZrkmqjmKEPg')
+//     await page.screenshot({path: 'batman.jpeg'})
+//     await browser.close()
+// })()
 
 
 //executar = node index.js
