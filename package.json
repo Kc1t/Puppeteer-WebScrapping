@@ -1,0 +1,23 @@
+{
+  "name": "webscrapping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kc1t/WebScrapping.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kc1t/WebScrapping/issues"
+  },
+  "homepage": "https://github.com/Kc1t/WebScrapping#readme",
+  "dependencies": {
+    "puppeteer": "^19.6.1"
+  }
+}
